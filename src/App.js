@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React, { useEffect, useState } from 'react';
+import Card from './components/Card'
+import './App.scss';
 
 function App() {
+
+      const [data, setData] = useState(null);
+
+      useEffect(() => {
+        fetch('https://my-json-server.typicode.com/Codeinwp/front-end-internship-api/posts')
+        .then(response => response.json())
+        .then(r => setData(r));
+      },[])
+    if(!data)
+    return <span>Loading...</span>
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">{ data.map((cardProps) => <Card {...cardProps} key={cardProps.id} />)
+      }
     </div>
+
   );
 }
 

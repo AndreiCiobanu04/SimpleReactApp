@@ -1,0 +1,43 @@
+.modal-card{
+    max-width: 550px;
+    height: 450px;
+    border-radius: 2px;
+    margin-top: 20px
+}
+
+.container-modal {
+    font-family: "Lato";
+    padding : 20px;
+}
+
+.title-modal {
+    color :#343a40 ;
+    margin-bottom: 30px;
+    overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+
+}
+.content-modal {
+
+    color: #6c757d;
+     margin-bottom: 20px;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     margin: 0 auto;
+}
+
+.image-modal {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.author-modal {
+    display: flex;
+    margin-top: 20px;
+    align-items: center;
+    color: #6c757d;
+    
+}
